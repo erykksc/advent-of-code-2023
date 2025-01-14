@@ -36,7 +36,6 @@ func main() {
 	var numbers []int
 	for scanner.Scan() {
 		line := scanner.Text()
-		fmt.Printf("Scanning line: %s\n", line)
 
 		first, last := math.MaxInt, math.MinInt
 		var firstC, lastC rune
@@ -69,6 +68,7 @@ func main() {
 		}
 
 		numberS := string([]rune{firstC, lastC})
+		fmt.Printf("%s\t%s\n", line, numberS)
 
 		number, err := strconv.Atoi(numberS)
 		if err != nil {
